@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌍 Explorador de Países</title>
+    <meta name="description" content="Explore informações sobre todos os países do mundo">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 Explorador de Países</h1>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar país por nome..." aria-label="Buscar país">
+                <select id="regionFilter" aria-label="Filtrar por região">
+                    <option value="">Todas as regiões</option>
+                    <option value="Africa">África</option>
+                    <option value="Americas">Américas</option>
+                    <option value="Asia">Ásia</option>
+                    <option value="Europe">Europa</option>
+                    <option value="Oceania">Oceania</option>
+                </select>
+            </div>
+        </header>
+
+        <main>
+            <div class="loading" id="loading">Carregando países...</div>
+            
+            <div class="countries-grid" id="countriesGrid" aria-live="polite"></div>
+
+            <div class="error" id="errorMessage" style="display: none;" role="alert"></div>
+        </main>
+    </div>
+
+    <!-- Modal para detalhes do país -->
+    <div id="countryModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" role="button" aria-label="Fechar modal">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
